@@ -1,0 +1,60 @@
+.popup
+    display: block
+    position: fixed
+    z-index: -999999
+    left: 0
+    top: -100%
+    width: 100%
+    height: 100%
+    transition: all .3s ease 0s
+    opacity: 0
+    visibility: hidden
+    &__container
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: rgba(255, 255, 255, .5)
+        width: 100%
+        height: 100%
+    &__wrapper
+        position: relative
+        background-color: $color-3
+        padding: rem-calc(30 40)
+        width: 100%
+        max-width: rem-calc(600)
+        margin: rem-calc(0 15)
+        @include respond(small)
+            padding: rem-calc(30 20)
+    &__close
+        position: absolute
+        top: rem-calc(15)
+        right: rem-calc(15)
+        color: $color-4
+        font-size: 28px
+        font-weight: bold
+        cursor: pointer
+        transition: all .3s ease 0s
+        @include respond(small)
+            top: rem-calc(10)
+            right: rem-calc(10)
+        &:hover,
+        &:focus
+            color: $color-5
+            text-decoration: none
+            cursor: pointer
+    &__title
+        font-size: rem-calc(24)
+        font-weight: 700
+        line-height: 1.5
+        color: $color-2
+        text-transform: uppercase
+    &__info
+        font-size: rem-calc(18)
+        font-weight: 400
+        line-height: 1.5
+        color: $color-4
+        margin-top: rem-calc(20)
+    &__form
+        margin-top: rem-calc(20)
+        .btn__wrap
+            font-size: rem-calc(16)

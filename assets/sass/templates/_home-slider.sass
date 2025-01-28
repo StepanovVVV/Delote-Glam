@@ -1,0 +1,111 @@
+.home-slider
+    position: relative
+    &__wrap
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center 
+    &__img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        img
+            height: 100%
+            object-position: center 
+        &::after
+            position: absolute
+            content: ''
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: $color-6
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        min-height: 100vh
+        padding-top: rem-calc(50)
+        padding-bottom: rem-calc(50)
+        @include respond(medium)
+            min-height: calc( 100vh - 70px )
+    &__title
+        font-size: rem-calc(72)
+        font-weight: 700
+        line-height: 1.19444444444
+        color: $color-1
+        max-width: rem-calc(600)
+        width: 100%
+        text-align: center
+        margin: 0 auto
+        @include respond(medium)
+            max-width: rem-calc(400)
+            font-size: rem-calc(56)
+        @include respond(small)
+            max-width: rem-calc(300)
+            font-size: rem-calc(42)
+        @media (max-width: 479px)
+            font-size: rem-calc(38)
+    &__info
+        margin-top: rem-calc(20)
+        >p+p
+            margin-top: rem-calc(15)
+    &__text
+        font-size: rem-calc(20)
+    &__btn
+        margin-top: rem-calc(30)
+    .slick-dots
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: rem-calc(10)
+        position: absolute
+        bottom: rem-calc(30)
+        width: 100%
+        @include respond(medium)
+            bottom: rem-calc(15)
+        >li
+            display: flex
+            justify-content: center
+            align-items: center
+            width: rem-calc(30)
+            height: rem-calc(30)
+            border-radius: 50%
+            border: rem-calc(2) solid yellow
+            cursor: pointer
+            @include respond(medium)
+                width: rem-calc(20)
+                height: rem-calc(20)
+            >button
+                font-size: 0
+                width: rem-calc(20)
+                height: rem-calc(20)
+                border-radius: 50%
+                background-color: transparent
+                transition: all .3s ease 0s
+                @include respond(medium)
+                    width: rem-calc(14)
+                    height: rem-calc(14)
+            &:hover>button
+                background-color: yellow
+        >li.slick-active
+            >button
+                background-color: yellow
+    .slick-arrow
+        position: absolute
+        top: 50%
+        z-index: 1
+        transform: translateY(-50%)
+        font-size: rem-calc(32)
+        transition: all .3s ease 0s
+        &:hover
+            opacity: .4
+        &.slick-next
+            left: rem-calc(15)
+        &.slick-prev
+            right: rem-calc(15)
+
+

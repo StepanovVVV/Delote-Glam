@@ -1,0 +1,30 @@
+.our-works
+    padding-top: rem-calc(110)
+    padding-bottom: rem-calc(50)
+    background-color: $color-2
+    @include respond(medium)
+        padding-top: rem-calc(80)
+    @include respond(small)
+        padding-top: rem-calc(40)
+    .grid-x
+        row-gap: rem-calc(24)
+    &__items
+        margin-top: rem-calc(80)
+        @include respond(small)
+            margin-top: rem-calc(60)
+    &__item
+        max-width: 100%
+        width: 100%
+    &__img
+        width: 100%
+        height: rem-calc(416)
+        overflow: hidden
+        transition: all .3s ease 0s
+        @include respond(small)
+            height: rem-calc(400)
+        &:hover
+            opacity: .8
+        img
+            width: 100%
+            height: 100%
+            object-position: top
