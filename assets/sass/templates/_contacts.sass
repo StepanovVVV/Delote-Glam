@@ -1,0 +1,23 @@
+.contacts
+    padding-top: rem-calc(80)
+    padding-bottom: rem-calc(50)
+    @include respond(small)
+        padding-top: rem-calc(50)
+        padding-bottom: rem-calc(25)
+    &__container
+        margin-top: rem-calc(80)
+        @include respond(small)
+            margin-top: rem-calc(50)
+    .grid-x
+        row-gap: rem-calc(60)
+        @include respond(small)
+            row-gap: rem-calc(40)
+    &__nav,
+    &__title
+        text-align: center
+    &__socials 
+        justify-content: center
+    &__map
+        height: rem-calc(576)
+        @include respond(small)
+            height: rem-calc(400)
