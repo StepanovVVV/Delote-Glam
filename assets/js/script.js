@@ -606,3 +606,10 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollUpButton.addEventListener('click', scrollToTop);
     }
 });
+
+// Redirect To ThankYouPage
+function redirectToThankYouPage(event) {
+    event.preventDefault(); 
+
+    window.location.href = '/thank-you.html';
+}
