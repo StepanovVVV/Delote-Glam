@@ -607,9 +607,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Redirect To ThankYouPage
+// Redirect To ThankYouPage for test
 function redirectToThankYouPage(event) {
     event.preventDefault(); 
 
     window.location.href = '/thank-you.html';
 }
+
