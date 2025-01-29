@@ -1,0 +1,74 @@
+.block
+    padding-top: rem-calc(80)
+    padding-bottom: rem-calc(50)
+    @include respond(medium)
+        padding-top: rem-calc(60)
+        padding-bottom: rem-calc(30)
+    @include respond(small)
+        padding-top: rem-calc(30)
+    .grid-x
+        row-gap: rem-calc(100)
+        @include respond(medium)
+            row-gap: rem-calc(60)
+    &__container
+        margin-top: rem-calc(100)
+        @include respond(small)
+            margin-top: rem-calc(60)
+    &__wrap
+        max-width: rem-calc(400)
+        width: 100%
+        position: relative
+        cursor: pointer
+        @include respond(medium)
+            max-width: 100%
+            cursor: auto
+        &:hover .block__info
+            opacity: 1
+            visibility: visible
+            z-index: 1
+        .frame::after
+            z-index: -1
+    &__img
+        overflow: hidden
+        height: rem-calc(477)
+        @include respond(medium)
+            max-width: calc(100% - 20px)
+        @include respond(small)
+            height: rem-calc(500)
+            @media (max-width: 479px)
+                height: rem-calc(400)
+        img
+            height: 100%
+            object-position: top
+    &__info
+        position: absolute
+        bottom: 0
+        left: 0
+        height: max-content
+        width: 100%
+        background-color: $color-5
+        padding: rem-calc(15)
+        border-top: rem-calc(2) solid $color-4
+        opacity: 0
+        visibility: hidden
+        z-index: -1
+        transition: all .3s ease 0s
+        @include respond(medium)
+            position: static
+            opacity: 1
+            visibility: visible
+            z-index: 1
+            max-width: calc(100% - 20px)
+            border-top: none
+    &__title
+        font-family: $subfont
+        font-size: rem-calc(27)
+        line-height: 1.2962962963
+        font-weight: 700
+        color: $color-1
+    &__text
+        font-size: rem-calc(18)
+        line-height: 1.27777777778
+        font-weight: 400
+        color: $color-1
+        margin-top: rem-calc(10)
