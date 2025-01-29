@@ -310,35 +310,36 @@ $('.brands__slider').slick({
 
 // Fancybox
 $(document).ready(function() {
-    // Инициализация Fancybox для галереи
-    $('[data-fancybox="gallery"]').fancybox({
-        buttons: [
-            "zoom",
-            "slideShow",
-            "fullScreen",
-            "thumbs",
-            "close"
-        ],
-        loop: true,
-        protect: true,
-        wheel: false,
-        touch: false,
-    });
-    
+    if ($('[data-fancybox="gallery"]').length) {
+        $('[data-fancybox="gallery"]').fancybox({
+            buttons: [
+                "zoom",
+                "slideShow",
+                "fullScreen",
+                "thumbs",
+                "close"
+            ],
+            loop: true,
+            protect: true,
+            wheel: false,
+            touch: false,
+        });
+    }
 
-    // Инициализация Fancybox для pop-up
-    $('[data-fancybox="popup"]').fancybox({
-        buttons: [
-            "zoom",
-            "slideShow",
-            "fullScreen",
-            "thumbs",
-            "close"
-        ],
-        closeButton: false, // Disable default close button
-        loop: true,
-        protect: true,
-    });
+    if ($('[data-fancybox="popup"]').length) {
+        $('[data-fancybox="popup"]').fancybox({
+            buttons: [
+                "zoom",
+                "slideShow",
+                "fullScreen",
+                "thumbs",
+                "close"
+            ],
+            closeButton: false, // Disable default close button
+            loop: true,
+            protect: true,
+        });
+    }
 
     // Custom close button for the popup
     $('.popup__close').on('click', function() {
@@ -581,24 +582,27 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const scrollUpButton = document.querySelector('.scroll-up');
 
-    function toggleScrollUpButton() {
-        if (window.scrollY > 100) {
-            scrollUpButton.classList.add('show');
-        } else {
-            scrollUpButton.classList.remove('show');
+    if (scrollUpButton) {
+
+        function toggleScrollUpButton() {
+            if (window.scrollY > 100) {
+                scrollUpButton.classList.add('show');
+            } else {
+                scrollUpButton.classList.remove('show');
+            }
         }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        toggleScrollUpButton(); 
+
+        window.addEventListener('scroll', toggleScrollUpButton);
+
+        scrollUpButton.addEventListener('click', scrollToTop);
     }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    toggleScrollUpButton();
-
-    window.addEventListener('scroll', toggleScrollUpButton);
-
-    scrollUpButton.addEventListener('click', scrollToTop);
 });
